@@ -13,6 +13,7 @@ const Home = () => {
     <Box>
       <HeroBanner />
       <SearchExercises setExercises={setExercises} bodyPart={bodyPart} setBodyPart={setBodyPart} />
+      {/* SearchExercises => HorizontalScrollbar => BodyPart裡面有一個setBodyPart，回傳到這裡帶到下面這個Excerise */}
       <Exercises setExercises={setExercises} exercises={exercises} bodyPart={bodyPart} />
     </Box>
   );

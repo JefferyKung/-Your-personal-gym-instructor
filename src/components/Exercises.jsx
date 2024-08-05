@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
+// https://mui.com/material-ui/react-pagination/
 import { Box, Stack, Typography } from '@mui/material';
 
 import { exerciseOptions, fetchData } from '../utils/fetchData';
@@ -15,9 +16,11 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
       let exercisesData = [];
 
       if (bodyPart === 'all') {
-        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises', exerciseOptions);
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises?limit=30&offset=0', exerciseOptions);
+        // console.log(exercisesData,"exercisesData")
       } else {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
+        // console.log(exercisesData,"exercisesData")
       }
 
       setExercises(exercisesData);
@@ -25,7 +28,9 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
     fetchExercisesData();
   }, [bodyPart]);
-
+  
+  // console.log(bodyPart,"bodyPart")
+  // console.log(exercisesData,"exercisesData")
   // Pagination
   const indexOfLastExercise = currentPage * exercisesPerPage; //6= 1 * 6
   const indexOfFirstExercise = indexOfLastExercise - exercisesPerPage; // 0 = 6-6
@@ -38,7 +43,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
 
   const paginate = (event, value) => {
     setCurrentPage(value);
-    //value is from material UI build in variables
+    //value is from material-UI build-in variables
 
     window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
@@ -55,7 +60,7 @@ const Exercises = ({ exercises, setExercises, bodyPart }) => {
         ))}
       </Stack>
       <Stack sx={{ mt: { lg: '114px', xs: '70px' } }} alignItems="center">
-        {exercises.length > 9 && (
+        {exercises.length > 6 && (
           <Pagination
             color="standard"
             shape="rounded"

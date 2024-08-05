@@ -19,6 +19,8 @@ import upperArms from "../assets/icons/upper arms.png";
 import waist from "../assets/icons/waist.png";
 import chest from "../assets/icons/chest.png";
 
+// https://www.npmjs.com/package/react-horizontal-scrolling-menu
+
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
