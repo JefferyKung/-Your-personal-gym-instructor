@@ -1,7 +1,7 @@
 # Your personal gym instructor
 This body-training guide built by the React.js web app fetches data from Rapid API. You can look up which part of your body you want to train. There are Gifs animations showing you how to do those exercises.
 
-https://your-personal-gym-instructor.vercel.app/
+https://www.jefferykung.online
 ![image](https://user-images.githubusercontent.com/102844561/235046772-48410dd2-aac6-4bd9-991c-a16aced3135d.png)
 ![image](https://user-images.githubusercontent.com/102844561/235046945-a52a9885-a865-4ea4-966f-5a62cc1d1324.png)
 ![image](https://user-images.githubusercontent.com/102844561/235047053-3e92c898-a731-470a-b8cc-44b0199679bf.png)
